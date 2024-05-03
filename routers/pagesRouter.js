@@ -1,18 +1,17 @@
-//import { homePageRender, aboutRender, contactRender } from "../util/readPages.js";
 import { homePageRender } from "../util/readPages.js";
 import { Router } from "express";
 
 const router = Router();
 
-router.get("/", (req, res) => {
+router.get("/api/", (req, res) => {
     res.send(homePageRender);
 });
 
-router.get("/about", (req, res) => {
+router.get("/api/about", (req, res) => {
     res.send(aboutRender);
 });
 
-router.get("/contact", (req, res) => {
+router.get("/api/contact", (req, res) => {
     res.send(contactRender);
 });
 

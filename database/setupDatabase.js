@@ -38,6 +38,15 @@ await db.exec(`CREATE TABLE IF NOT EXISTS movie_directors (
 `);
 
 
+await db.exec(`CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT NOT NULL,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL,
+)
+`);
+
+
 if (isDeleteMode) {
     await db.run(`INSERT INTO movies (name, release_date, length, genre) VALUES ('No Country for Old Men', 2007, 122, 'Thriller')`);
     await db.run(`INSERT INTO directors (name, movie_id) VALUES ('Joel Coen', 1)`);
